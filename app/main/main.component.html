@@ -1,0 +1,48 @@
+
+<p>
+    <mat-toolbar class="text-center" style="background-color: #B0BEC5;">
+      <span>אישור הגעה לחתונה של אשר וזיוה</span>
+    </mat-toolbar>
+  </p>
+<div class="background-img"></div>
+    <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1" (click)="showSubmitWithPhone()">מגיע</mat-radio-button>
+    <mat-radio-button value="2" (click)="showSubmit()">לא מגיע</mat-radio-button>
+    </mat-radio-group>
+    <div *ngIf="isComing != null">
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" style="margin-top: 3%;"> 
+            <div class="form-group"> 
+                <div class="d-flex justify-content-center">
+                    <mat-form-field>
+                        <mat-label>הכנס/י מספר פלאפון</mat-label>
+                        <!-- 
+                            <span matSuffix >+972 &nbsp;</span>
+                        -->
+                        <input type="tel" name="phone" class="form-control" matInput placeholder="555-555-1234" style="text-align: left;" formControlName="phone">    
+                    </mat-form-field>  
+                </div>
+                    <mat-form-field>
+                        <mat-label>מספר אנשים</mat-label>
+                        <input matInput type="number" class="form-control" placeholder="1" min="1" formControlName="numberPepole">
+                    </mat-form-field>
+            </div> 
+            <div>
+                <button style="min-width: 10%;" type="submit" mat-raised-button color="primary">שלח/י</button>
+            </div>
+        </form>
+    </div>
+    <div class="d-flex justify-content-center">
+        <mat-card class="example-card" style="background-color: #424242; margin-top: 2%; max-width: 70%;">
+            <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title style="color: cornsilk;">הזמנה לחתונה</mat-card-title>
+            <mat-card-subtitle  style="color: cornsilk;">אשמח שתאשרו הגעה</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://nofach.co.il/wp-content/uploads/2019/10/%D7%96%D7%94%D7%91-%D7%95%D7%91%D7%96-600x600.jpg" alt="Photo of a Shiba Inu">
+        </mat-card>
+    </div>
+      
+       
+      
+   
+ 
